@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retro Ralph — Partnership Rate Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F7F4EE;
+    --warm-white: #FDFBF8;
+    --ink: #1C1917;
+    --ink-light: #3D3935;
+    --muted: #8A8480;
+    --rule: #D9D4CC;
+    --accent: #8B6C4A;
+    --accent-light: #C4A882;
+    --accent-pale: #F0E8DC;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Montserrat', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    color: var(--cream);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,0.025) 79px, rgba(255,255,255,0.025) 80px),
+      repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.025) 79px, rgba(255,255,255,0.025) 80px);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 32px;
+  }
+
+  .hero-wordmark {
+    font-family: var(--serif);
+    font-size: clamp(64px, 10vw, 120px);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    color: var(--warm-white);
+    margin-bottom: 8px;
+  }
+
+  .hero-wordmark em {
+    font-style: italic;
+    color: var(--accent-light);
+  }
+
+  .hero-rule {
+    width: 60px;
+    height: 1px;
+    background: var(--accent);
+    margin: 32px auto;
+  }
+
+  .hero-tagline {
+    font-family: var(--serif);
+    font-size: clamp(18px, 3vw, 26px);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(247,244,238,0.7);
+    max-width: 480px;
+    line-height: 1.5;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(247,244,238,0.35);
+  }
+
+  .hero-scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(247,244,238,0.35), transparent);
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 100px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+
+  .section-title em { font-style: italic; color: var(--accent); }
+
+  .section-intro {
+    font-size: 15px;
+    color: var(--ink-light);
+    max-width: 560px;
+    line-height: 1.8;
+    margin-bottom: 60px;
+  }
+
+  /* ── DIVIDER ── */
+  .full-rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* ── STATS BAND ── */
+  .stats-band {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 80px 40px;
+  }
+
+  .stats-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .stats-label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 60px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .stat {
+    background: var(--ink);
+    padding: 40px 32px;
+    position: relative;
+  }
+
+  .stat-number {
+    font-family: var(--serif);
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 300;
+    color: var(--warm-white);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+  }
+
+  .stat-sub {
+    font-size: 12px;
+    color: rgba(247,244,238,0.4);
+    margin-top: 4px;
+  }
+
+  /* audience split */
+  .audience-split {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .audience-block {}
+
+  .audience-block-title {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .bar-label {
+    font-size: 11px;
+    color: rgba(247,244,238,0.6);
+    width: 60px;
+    flex-shrink: 0;
+  }
+
+  .bar-track {
+    flex: 1;
+    height: 2px;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .bar-fill {
+    height: 100%;
+    background: var(--accent);
+  }
+
+  .bar-value {
+    font-size: 11px;
+    color: rgba(247,244,238,0.5);
+    width: 36px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .cities-list {
+    font-size: 12px;
+    color: rgba(247,244,238,0.55);
+    line-height: 1.9;
+  }
+
+  .notable {
+    margin-top: 40px;
+    padding: 28px 32px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .notable-label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 12px;
+  }
+
+  .notable-names {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(247,244,238,0.7);
+    line-height: 1.7;
+  }
+
+  /* ── WHAT WE MAKE ── */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-bottom: 60px;
+  }
+
+  .pillar {
+    background: var(--warm-white);
+    padding: 36px 32px;
+  }
+
+  .pillar-icon {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-style: italic;
+    color: var(--accent-light);
+    margin-bottom: 16px;
+    line-height: 1;
+  }
+
+  .pillar-title {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+
+  .pillar-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ── RATE CARD ── */
+  .rates-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .rate-item {
+    background: var(--warm-white);
+    padding: 36px 40px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: start;
+    transition: background 0.2s;
+  }
+
+  .rate-item:hover { background: var(--accent-pale); }
+
+  .rate-name {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .rate-title {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+
+  .rate-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 440px;
+  }
+
+  .rate-bullets {
+    margin-top: 14px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .rate-bullets li {
+    font-size: 12px;
+    color: var(--muted);
+    padding-left: 14px;
+    position: relative;
+  }
+
+  .rate-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent-light);
+  }
+
+  .rate-price {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .rate-price-number {
+    font-family: var(--serif);
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .rate-price-sub {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* ── PACKAGES ── */
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .package {
+    background: var(--warm-white);
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .package.featured {
+    background: var(--ink);
+    color: var(--cream);
+  }
+
+  .package-tag {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .package.featured .package-tag { color: var(--accent-light); }
+
+  .package-name {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .package.featured .package-name { color: var(--warm-white); }
+
+  .package-includes {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .package.featured .package-includes { color: rgba(247,244,238,0.55); }
+
+  .package-price {
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--ink);
+  }
+
+  .package.featured .package-price {
+    border-top-color: rgba(255,255,255,0.1);
+    color: var(--warm-white);
+  }
+
+  .package-price-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+    font-family: var(--sans);
+  }
+
+  .package.featured .package-price-label { color: var(--accent-light); }
+
+  /* ── TERMS ── */
+  .terms-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .term {
+    background: var(--warm-white);
+    padding: 36px 32px;
+  }
+
+  .term-title {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .term-body {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  /* ── PARTNERS ── */
+  .partners-list {
+    font-family: var(--serif);
+    font-size: clamp(18px, 3vw, 26px);
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--ink-light);
+  }
+
+  .partners-list span {
+    color: var(--rule);
+    margin: 0 16px;
+    font-size: 0.7em;
+  }
+
+  /* ── CTA ── */
+  .cta-band {
+    background: var(--ink);
+    padding: 100px 40px;
+    text-align: center;
+  }
+
+  .cta-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 32px;
+  }
+
+  .cta-title {
+    font-family: var(--serif);
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--warm-white);
+    line-height: 1.15;
+    margin-bottom: 40px;
+  }
+
+  .cta-email {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cream);
+    text-decoration: none;
+    border: 1px solid rgba(247,244,238,0.3);
+    padding: 16px 40px;
+    transition: all 0.2s;
+  }
+
+  .cta-email:hover {
+    background: var(--cream);
+    color: var(--ink);
+    border-color: var(--cream);
+  }
+
+  .cta-links {
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .cta-link {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: rgba(247,244,238,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .cta-link:hover { color: var(--accent-light); }
+
+  .footer-note {
+    margin-top: 60px;
+    font-size: 11px;
+    color: rgba(247,244,238,0.2);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    section { padding: 60px 24px; }
+    .stats-band, .cta-band { padding: 60px 24px; }
+    .rate-item { grid-template-columns: 1fr; }
+    .rate-price { text-align: left; }
+    .terms-grid { grid-template-columns: 1fr; }
+    .audience-split { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <p class="hero-eyebrow">Partnership Rate Card — 2025</p>
+  <h1 class="hero-wordmark">Retro <em>Ralph</em></h1>
+  <div class="hero-rule"></div>
+  <p class="hero-tagline">Fashion is temporary.<br>Style is forever.</p>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    scroll
+  </div>
+</header>
+
+<!-- WHAT IS RETRO RALPH -->
+<section>
+  <p class="section-label">The Platform</p>
+  <h2 class="section-title">An independent<br>menswear <em>media platform</em></h2>
+  <p class="section-intro">
+    Retro Ralph explores timeless style through heritage, craftsmanship, and culture — translating good taste into stories people can actually use. Education-led, never outfit-led. The best wardrobes are built slowly. Classics first. Trends never required.
+  </p>
+
+  <div class="pillars-grid">
+    <div class="pillar">
+      <div class="pillar-icon">I.</div>
+      <div class="pillar-title">Brand Histories</div>
+      <p class="pillar-desc">Deep dives into heritage brands — what's real, what's marketing, what has endured.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">II.</div>
+      <div class="pillar-title">Style Icons</div>
+      <p class="pillar-desc">Famous men used as case studies in personal style, restraint, and how great taste actually works.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">III.</div>
+      <div class="pillar-title">Holidays & Travel</div>
+      <p class="pillar-desc">Hotels, places, and slow travel viewed through the lens of timeless taste and cultural provenance.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">IV.</div>
+      <div class="pillar-title">Style Advice</div>
+      <p class="pillar-desc">Practical, evergreen wardrobe guidance. The why matters as much as the what.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="full-rule">
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="stats-inner">
+    <p class="stats-label">Audience & Reach</p>
+
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-number">233k</div>
+        <div class="stat-label">Instagram</div>
+        <div class="stat-sub">Primary channel</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">5M+</div>
+        <div class="stat-label">Monthly Views</div>
+        <div class="stat-sub">Instagram</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">300k+</div>
+        <div class="stat-label">Engagements</div>
+        <div class="stat-sub">Per month</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">50k</div>
+        <div class="stat-label">TikTok</div>
+        <div class="stat-sub">& growing</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">2M</div>
+        <div class="stat-label">Peak video</div>
+        <div class="stat-sub">150k typical floor</div>
+      </div>
+    </div>
+
+    <div class="audience-split">
+      <div class="audience-block">
+        <div class="audience-block-title">Primary demographic</div>
+        <div class="bar-row">
+          <span class="bar-label">18–24</span>
+          <div class="bar-track"><div class="bar-fill" style="width:43%"></div></div>
+          <span class="bar-value">12.9%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">25–34</span>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+          <span class="bar-value">35.4%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">35–44</span>
+          <div class="bar-track"><div class="bar-fill" style="width:66%"></div></div>
+          <span class="bar-value">23.6%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">45–54</span>
+          <div class="bar-track"><div class="bar-fill" style="width:34%"></div></div>
+          <span class="bar-value">13.5%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">55+</span>
+          <div class="bar-track"><div class="bar-fill" style="width:25%"></div></div>
+          <span class="bar-value">14.6%</span>
+        </div>
+      </div>
+
+      <div class="audience-block">
+        <div class="audience-block-title">Top cities</div>
+        <p class="cities-list">London · New York · Sydney<br>Los Angeles · Paris · Toronto<br>Madrid · Chicago · Dubai · Melbourne</p>
+        <div style="margin-top: 24px;">
+          <div class="audience-block-title">Top countries</div>
+          <div class="bar-row">
+            <span class="bar-label">US</span>
+            <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+            <span class="bar-value">29.8%</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">UK</span>
+            <div class="bar-track"><div class="bar-fill" style="width:48%"></div></div>
+            <span class="bar-value">14.4%</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">AUS</span>
+            <div class="bar-track"><div class="bar-fill" style="width:12%"></div></div>
+            <span class="bar-value">3.7%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="notable">
+      <div class="notable-label">Notable followers include</div>
+      <p class="notable-names">Patrick Dempsey · David Lauren · Jeremy Piven · Zoë de Givenchy · Alexander Kraft · Mickey Rourke · Kiel James Patrick</p>
+    </div>
+  </div>
+</div>
+
+<!-- RATES -->
+<section>
+  <p class="section-label">Rate Card</p>
+  <h2 class="section-title">What we <em>make</em></h2>
+  <p class="section-intro">Every piece is built around the same filter: educate, entertain, or provoke emotion. Usually all three. Partners are woven into the story — never the headline.</p>
+
+  <div class="rates-list">
+    <div class="rate-item">
+      <div>
+        <p class="rate-name">Primary format</p>
+        <h3 class="rate-title">Short-Form Video</h3>
+        <p class="rate-desc">Reels, TikTok, YouTube Shorts. Script, shoot, edit, and post included. A standard ~60s editorial reel sits at the lower end; a deeper narrative with extended production and broader usage moves toward the upper.</p>
+        <ul class="rate-bullets">
+          <li>One round of feedback built in as standard</li>
+          <li>Collaboration post (dual-tag) available on request</li>
+          <li>Discounts for series or multi-post commitments</li>
+        </ul>
+      </div>
+      <div class="rate-price">
+        <div class="rate-price-number">£2,000</div>
+        <div class="rate-price-sub">– £6,000 per video</div>
+      </div>
+    </div>
+
+    <div class="rate-item">
+      <div>
+        <p class="rate-name">Supporting format</p>
+        <h3 class="rate-title">Carousels & Static Posts</h3>
+        <p class="rate-desc">Ideal for product highlights, event recaps, or evergreen educational content. Often used alongside video as part of a wider campaign.</p>
+      </div>
+      <div class="rate-price">
+        <div class="rate-price-number">£500</div>
+        <div class="rate-price-sub">– £1,000 per post</div>
+      </div>
+    </div>
+
+    <div class="rate-item">
+      <div>
+        <p class="rate-name">Long-form</p>
+        <h3 class="rate-title">Editorial (Substack / Blog)</h3>
+        <p class="rate-desc">Research-led, evergreen pieces. Built to be bookmarked, not scrolled past. Pricing reflects depth, originality, and long-term search value.</p>
+      </div>
+      <div class="rate-price">
+        <div class="rate-price-number">£800</div>
+        <div class="rate-price-sub">– £1,500 per article</div>
+      </div>
+    </div>
+
+    <div class="rate-item">
+      <div>
+        <p class="rate-name">Brand channel</p>
+        <h3 class="rate-title">Channel Takeover</h3>
+        <p class="rate-desc">Fully produced by Retro Ralph, posted exclusively on the partner's channel. Retro Ralph quality, your audience.</p>
+      </div>
+      <div class="rate-price">
+        <div class="rate-price-number">£1,000</div>
+        <div class="rate-price-sub">per video</div>
+      </div>
+    </div>
+
+    <div class="rate-item">
+      <div>
+        <p class="rate-name">Narration</p>
+        <h3 class="rate-title">Voiceover / Script Only</h3>
+        <p class="rate-desc">For brands producing their own footage internally. Retro Ralph writes and records the narration; you handle the edit.</p>
+      </div>
+      <div class="rate-price">
+        <div class="rate-price-number">£200</div>
+        <div class="rate-price-sub">per video</div>
+      </div>
+    </div>
+
+    <div class="rate-item">
+      <div>
+        <p class="rate-name">Travel & Events</p>
+        <h3 class="rate-title">Stories</h3>
+        <p class="rate-desc">Typically included as part of a wider package or trip collaboration. Average 10–15k views per story.</p>
+      </div>
+      <div class="rate-price">
+        <div class="rate-price-number" style="font-size: 22px;">On request</div>
+        <div class="rate-price-sub">usually bundled</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="full-rule">
+
+<!-- PACKAGES -->
+<section>
+  <p class="section-label">Partnership Packages</p>
+  <h2 class="section-title">Built to <em>last</em></h2>
+  <p class="section-intro">One-off posts are a starting point. The work that travels furthest is built across multiple pieces over time.</p>
+
+  <div class="packages-grid">
+    <div class="package">
+      <p class="package-tag">01</p>
+      <h3 class="package-name">The Introduction</h3>
+      <p class="package-includes">1 × reel<br>Testing the waters</p>
+      <div class="package-price">
+        <div class="package-price-label">From</div>
+        £2,000
+      </div>
+    </div>
+
+    <div class="package">
+      <p class="package-tag">02</p>
+      <h3 class="package-name">The Edit</h3>
+      <p class="package-includes">1 × reel + 1 × carousel<br>Campaign or product launch</p>
+      <div class="package-price">
+        <div class="package-price-label">From</div>
+        £2,800
+      </div>
+    </div>
+
+    <div class="package featured">
+      <p class="package-tag">03</p>
+      <h3 class="package-name">The Series</h3>
+      <p class="package-includes">3–4 × reels across a quarter<br>Seasonal or ongoing partnership</p>
+      <div class="package-price">
+        <div class="package-price-label">From</div>
+        £5,500
+      </div>
+    </div>
+
+    <div class="package">
+      <p class="package-tag">04</p>
+      <h3 class="package-name">The Editorial</h3>
+      <p class="package-includes">1 × reel + 1 × article + stories<br>Heritage storytelling or launches</p>
+      <div class="package-price">
+        <div class="package-price-label">From</div>
+        £3,500
+      </div>
+    </div>
+
+    <div class="package">
+      <p class="package-tag">05</p>
+      <h3 class="package-name">The Residency</h3>
+      <p class="package-includes">Bespoke annual arrangement<br>Long-term brand partners</p>
+      <div class="package-price">
+        <div class="package-price-label">Guide price</div>
+        On request
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="full-rule">
+
+<!-- TERMS -->
+<section>
+  <p class="section-label">Terms & Standards</p>
+  <h2 class="section-title">How we <em>work</em></h2>
+
+  <div class="terms-grid">
+    <div class="term">
+      <p class="term-title">Usage Rights</p>
+      <p class="term-body">Default usage is organic reposting with credit. Paid media amplification, whitelisting, or extended licensing is priced separately. Scope, duration, and geography confirmed before work begins.</p>
+    </div>
+    <div class="term">
+      <p class="term-title">Exclusivity</p>
+      <p class="term-body">Exclusivity windows are available and priced accordingly. Retro Ralph does not take on competing brands within a given category during an active partnership without prior disclosure.</p>
+    </div>
+    <div class="term">
+      <p class="term-title">Disclosure</p>
+      <p class="term-body">All paid and affiliate content is clearly disclosed, in compliance with ASA guidelines and platform rules. Transparency is non-negotiable — it is also the reason this audience trusts what they read.</p>
+    </div>
+    <div class="term">
+      <p class="term-title">Red Lines</p>
+      <p class="term-body">Retro Ralph does not work with fast fashion, hype-driven brands, or partnerships requiring scripted opinions or misrepresentation of quality. If it compromises taste or trust, it does not proceed.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="full-rule">
+
+<!-- PARTNERS -->
+<section>
+  <p class="section-label">Previous Partners</p>
+  <h2 class="section-title">Brands we've<br><em>worked with</em></h2>
+  <p class="section-intro">A selective list. Partnerships have included editorial features, event-led storytelling, series-based content, and long-term brand integrations.</p>
+
+  <p class="partners-list">
+    Gieves & Hawkes<span>·</span>J. Press<span>·</span>N.Peal<span>·</span>Idle Assembly Rum<span>·</span>Stubbs & Wootton<span>·</span>Ghiaia Cashmere<span>·</span>August Special<span>·</span>J. Mueser<span>·</span>SIRPLUS<span>·</span>Thomas Riemer Gloves<span>·</span>Hornets Vintage Kensington<span>·</span>Aicus Shoes<span>·</span>Minted New York<span>·</span>Peshawar Jackets<span>·</span>Bumbazi
+  </p>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="cta-inner">
+    <p class="cta-label">Get in touch</p>
+    <h2 class="cta-title">Let's make<br>something that lasts.</h2>
+    <a class="cta-email" href="mailto:info@retroralph.uk">info@retroralph.uk</a>
+    <div class="cta-links">
+      <a class="cta-link" href="https://instagram.com/retro__ralph" target="_blank">Instagram</a>
+      <a class="cta-link" href="https://retroralph.substack.com" target="_blank">Substack</a>
+    </div>
+    <p class="footer-note">Retro Ralph Ltd &nbsp;·&nbsp; Company No. 13362975 &nbsp;·&nbsp; London, United Kingdom</p>
+  </div>
+</div>
+
+</body>
+</html>

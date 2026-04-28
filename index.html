@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Retro Ralph — Partnership Rate Card</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%231C1917'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia%2C serif' font-size='28' font-weight='400' letter-spacing='-2' fill='%23C4A882'>RR</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=The+Seasons:wght@400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -21,6 +22,7 @@
     --accent-pale: #F0E8DC;
     --serif: 'Cormorant Garamond', Georgia, serif;
     --sans: 'Montserrat', sans-serif;
+    --wordmark: 'The Seasons', 'Cormorant Garamond', Georgia, serif;
   }
 
   html { scroll-behavior: smooth; }
@@ -70,18 +72,19 @@
   }
 
   .hero-wordmark {
-    font-family: var(--serif);
+    font-family: var(--wordmark);
     font-size: clamp(64px, 10vw, 120px);
-    font-weight: 300;
-    letter-spacing: -0.01em;
+    font-weight: 400;
+    letter-spacing: 0.05em;
     line-height: 1;
     color: var(--warm-white);
     margin-bottom: 8px;
+    text-transform: uppercase;
   }
 
   .hero-wordmark em {
-    font-style: italic;
-    color: var(--accent-light);
+    font-style: normal;
+    color: var(--warm-white);
   }
 
   .hero-rule {
@@ -642,6 +645,99 @@
     letter-spacing: 0.05em;
   }
 
+  .notable-link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(196,168,130,0.35);
+    transition: border-color 0.2s;
+  }
+  .notable-link:hover { border-bottom-color: rgba(196,168,130,0.9); }
+  .notable-sep { color: rgba(247,244,238,0.2); margin: 0 10px; }
+
+  .package-secondary {
+    background: var(--accent-pale);
+    border-left: 3px solid var(--accent);
+  }
+
+  .package-secondary .package-tag { color: var(--accent); }
+  .package-secondary .package-name { color: var(--ink); }
+  .package-secondary .package-includes { color: var(--ink-light); }
+  .package-secondary .package-price { color: var(--ink); border-top-color: var(--accent-light); }
+  .package-secondary .package-price-label { color: var(--accent); }
+
+  .partners-by-pillar {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .partners-pillar {
+    background: var(--warm-white);
+    padding: 36px 40px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto auto;
+    gap: 4px 40px;
+    align-items: start;
+  }
+
+  .partners-pillar-name {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink);
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .partners-pillar-desc {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .partners-names {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--ink-light);
+    line-height: 1.8;
+    grid-column: 2;
+    grid-row: 1 / 3;
+    border-left: 1px solid var(--rule);
+    padding-left: 40px;
+  }
+
+  .package-example {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(139,108,74,0.35);
+    padding-bottom: 3px;
+    transition: border-color 0.2s;
+  }
+
+  .package-example:hover { border-bottom-color: var(--accent); }
+
+  .package-example-light {
+    color: var(--accent-light);
+    border-bottom-color: rgba(196,168,130,0.35);
+  }
+
+  .package-example-light:hover { border-bottom-color: var(--accent-light); }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 640px) {
     section { padding: 60px 24px; }
@@ -650,6 +746,8 @@
     .rate-price { text-align: left; }
     .terms-grid { grid-template-columns: 1fr; }
     .audience-split { grid-template-columns: 1fr; }
+    .partners-pillar { grid-template-columns: 1fr; }
+    .partners-names { grid-column: 1; grid-row: 3; border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 16px; margin-top: 8px; }
   }
 </style>
 </head>
@@ -657,10 +755,10 @@
 
 <!-- HERO -->
 <header class="hero">
-  <p class="hero-eyebrow">Partnership Rate Card — 2025</p>
+  <p class="hero-eyebrow">Partnership Rate Card — 2026</p>
   <h1 class="hero-wordmark">Retro <em>Ralph</em></h1>
   <div class="hero-rule"></div>
-  <p class="hero-tagline">Fashion is temporary.<br>Style is forever.</p>
+  <p class="hero-tagline">Style is forever.</p>
   <div class="hero-scroll">
     <div class="hero-scroll-line"></div>
     scroll
@@ -672,29 +770,39 @@
   <p class="section-label">The Platform</p>
   <h2 class="section-title">An independent<br>menswear <em>media platform</em></h2>
   <p class="section-intro">
-    Retro Ralph explores timeless style through heritage, craftsmanship, and culture — translating good taste into stories people can actually use. Education-led, never outfit-led. The best wardrobes are built slowly. Classics first. Trends never required.
+    Retro Ralph is an exploration into what makes style timeless. Through menswear, culture, and experience. What people wear, where they go, and how they live when taste is the constant.
   </p>
 
   <div class="pillars-grid">
     <div class="pillar">
       <div class="pillar-icon">I.</div>
-      <div class="pillar-title">Brand Histories</div>
-      <p class="pillar-desc">Deep dives into heritage brands — what's real, what's marketing, what has endured.</p>
+      <div class="pillar-title">The Standard</div>
+      <p class="pillar-desc">The clothes, the craftsmanship, the logic behind a timeless wardrobe. Why certain things last and everything else doesn't.</p>
     </div>
     <div class="pillar">
       <div class="pillar-icon">II.</div>
-      <div class="pillar-title">Style Icons</div>
-      <p class="pillar-desc">Famous men used as case studies in personal style, restraint, and how great taste actually works.</p>
+      <div class="pillar-title">The Portrait</div>
+      <p class="pillar-desc">People who got it right. Those who understood something most people miss.</p>
     </div>
     <div class="pillar">
       <div class="pillar-icon">III.</div>
-      <div class="pillar-title">Holidays & Travel</div>
-      <p class="pillar-desc">Hotels, places, and slow travel viewed through the lens of timeless taste and cultural provenance.</p>
+      <div class="pillar-title">The Exchange</div>
+      <p class="pillar-desc">Conversations and creative work with those worth paying attention to.</p>
     </div>
     <div class="pillar">
       <div class="pillar-icon">IV.</div>
-      <div class="pillar-title">Style Advice</div>
-      <p class="pillar-desc">Practical, evergreen wardrobe guidance. The why matters as much as the what.</p>
+      <div class="pillar-title">The Dispatch</div>
+      <p class="pillar-desc">The hotels worth staying in. The places worth going. The restaurants worth eating at. The bars worth drinking at.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">V.</div>
+      <div class="pillar-title">The Pursuit</div>
+      <p class="pillar-desc">The curiosities adjacent to style. Cars, sport, history, culture. The things that make a well-dressed man interesting.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">VI.</div>
+      <div class="pillar-title">The Residence</div>
+      <p class="pillar-desc">Objects, interiors, and the quiet art of living well.</p>
     </div>
   </div>
 </section>
@@ -704,13 +812,21 @@
 <!-- STATS -->
 <div class="stats-band">
   <div class="stats-inner">
-    <p class="stats-label">Audience & Reach</p>
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:60px;">
+      <p class="stats-label" style="margin-bottom:0;">Audience & Reach</p>
+      <div style="display:flex; gap:24px; flex-wrap:wrap;">
+        <a href="https://instagram.com/retro__ralph" target="_blank" style="font-size:10px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:rgba(196,168,130,0.6); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='rgba(196,168,130,1)'" onmouseout="this.style.color='rgba(196,168,130,0.6)'">Instagram</a>
+        <a href="https://www.tiktok.com/@retroralph.uk" target="_blank" style="font-size:10px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:rgba(196,168,130,0.6); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='rgba(196,168,130,1)'" onmouseout="this.style.color='rgba(196,168,130,0.6)'">TikTok</a>
+        <a href="https://www.facebook.com/retroralph.uk/" target="_blank" style="font-size:10px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:rgba(196,168,130,0.6); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='rgba(196,168,130,1)'" onmouseout="this.style.color='rgba(196,168,130,0.6)'">Facebook</a>
+        <a href="https://retroralph.substack.com" target="_blank" style="font-size:10px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:rgba(196,168,130,0.6); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='rgba(196,168,130,1)'" onmouseout="this.style.color='rgba(196,168,130,0.6)'">Substack</a>
+      </div>
+    </div>
 
     <div class="stats-grid">
       <div class="stat">
-        <div class="stat-number">233k</div>
-        <div class="stat-label">Instagram</div>
-        <div class="stat-sub">Primary channel</div>
+        <div class="stat-number">329k+</div>
+        <div class="stat-label">Total Followers</div>
+        <div class="stat-sub">Across all platforms</div>
       </div>
       <div class="stat">
         <div class="stat-number">5M+</div>
@@ -723,14 +839,9 @@
         <div class="stat-sub">Per month</div>
       </div>
       <div class="stat">
-        <div class="stat-number">50k</div>
-        <div class="stat-label">TikTok</div>
-        <div class="stat-sub">& growing</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">2M</div>
-        <div class="stat-label">Peak video</div>
-        <div class="stat-sub">150k typical floor</div>
+        <div class="stat-number">50k–2M+</div>
+        <div class="stat-label">Video Views</div>
+        <div class="stat-sub">Per video range</div>
       </div>
     </div>
 
@@ -790,7 +901,21 @@
 
     <div class="notable">
       <div class="notable-label">Notable followers include</div>
-      <p class="notable-names">Patrick Dempsey · David Lauren · Jeremy Piven · Zoë de Givenchy · Alexander Kraft · Mickey Rourke · Kiel James Patrick</p>
+      <p class="notable-names">
+        <a href="https://www.instagram.com/patrickdempsey/" target="_blank" class="notable-link">Patrick Dempsey</a>
+        <span class="notable-sep">·</span>
+        <a href="https://www.instagram.com/davidlauren/" target="_blank" class="notable-link">David Lauren</a>
+        <span class="notable-sep">·</span>
+        <a href="https://www.instagram.com/kjp/" target="_blank" class="notable-link">Kiel James Patrick</a>
+        <span class="notable-sep">·</span>
+        <a href="https://www.instagram.com/jeremypiven/" target="_blank" class="notable-link">Jeremy Piven</a>
+        <span class="notable-sep">·</span>
+        <a href="https://www.instagram.com/yolandaedwards/" target="_blank" class="notable-link">Yolanda Edwards</a>
+        <span class="notable-sep">·</span>
+        <a href="https://www.instagram.com/zoedegivenchy/" target="_blank" class="notable-link">Zoë de Givenchy</a>
+        <span class="notable-sep">·</span>
+        <a href="https://www.instagram.com/joe_sugg/" target="_blank" class="notable-link">Joe Sugg</a>
+      </p>
     </div>
   </div>
 </div>
@@ -799,7 +924,7 @@
 <section>
   <p class="section-label">Rate Card</p>
   <h2 class="section-title">What we <em>make</em></h2>
-  <p class="section-intro">Every piece is built around the same filter: educate, entertain, or provoke emotion. Usually all three. Partners are woven into the story — never the headline.</p>
+  <p class="section-intro">Every piece is built around the same filter: educate, entertain, or provoke emotion. Usually all three. Around 90% of content is unpaid — partnerships are selective, and brands are woven into the story rather than placed on top of it. That's why the audience trusts what they see.</p>
 
   <div class="rates-list">
     <div class="rate-item">
@@ -893,51 +1018,34 @@
     <div class="package">
       <p class="package-tag">01</p>
       <h3 class="package-name">The Introduction</h3>
-      <p class="package-includes">1 × reel<br>Testing the waters</p>
+      <p class="package-includes">1 × reel<br><br>The starting point. A single, fully produced editorial reel — to establish the story and see how it lands.</p>
       <div class="package-price">
         <div class="package-price-label">From</div>
         £2,000
       </div>
+      <a href="https://www.instagram.com/retro__ralph/reel/DT94gcyiLEE/" target="_blank" class="package-example">View example</a>
     </div>
 
-    <div class="package">
+    <div class="package package-secondary">
       <p class="package-tag">02</p>
-      <h3 class="package-name">The Edit</h3>
-      <p class="package-includes">1 × reel + 1 × carousel<br>Campaign or product launch</p>
-      <div class="package-price">
-        <div class="package-price-label">From</div>
-        £2,800
-      </div>
-    </div>
-
-    <div class="package featured">
-      <p class="package-tag">03</p>
-      <h3 class="package-name">The Series</h3>
-      <p class="package-includes">3–4 × reels across a quarter<br>Seasonal or ongoing partnership</p>
-      <div class="package-price">
-        <div class="package-price-label">From</div>
-        £5,500
-      </div>
-    </div>
-
-    <div class="package">
-      <p class="package-tag">04</p>
       <h3 class="package-name">The Editorial</h3>
-      <p class="package-includes">1 × reel + 1 × article + stories<br>Heritage storytelling or launches</p>
+      <p class="package-includes">1 × reel + 1 × carousel + 1 × article + stories<br><br>The reel opens the door. The carousel gives it context. The article deepens it — with craft, history, and shoppable links. Stories amplify throughout. A complete editorial loop, not a single post.</p>
       <div class="package-price">
         <div class="package-price-label">From</div>
         £3,500
       </div>
+      <a href="https://www.instagram.com/retro__ralph/reel/DPEdF6fCDkp/" target="_blank" class="package-example">View example</a>
     </div>
 
-    <div class="package">
-      <p class="package-tag">05</p>
+    <div class="package featured">
+      <p class="package-tag">03</p>
       <h3 class="package-name">The Residency</h3>
-      <p class="package-includes">Bespoke annual arrangement<br>Long-term brand partners</p>
+      <p class="package-includes">Bespoke annual partnership<br><br>A limited number of brands are taken on each year for a longer-term creative relationship. Deeper storytelling, greater integration, and genuine brand building over time. Space is finite by design.</p>
       <div class="package-price">
         <div class="package-price-label">Guide price</div>
         On request
       </div>
+      <a href="https://www.instagram.com/retro__ralph/reel/DKZ2pPGon9_/" target="_blank" class="package-example package-example-light">View example</a>
     </div>
   </div>
 </section>
@@ -974,12 +1082,26 @@
 <!-- PARTNERS -->
 <section>
   <p class="section-label">Previous Partners</p>
-  <h2 class="section-title">Brands we've<br><em>worked with</em></h2>
+  <h2 class="section-title">In Good <em>Company</em></h2>
   <p class="section-intro">A selective list. Partnerships have included editorial features, event-led storytelling, series-based content, and long-term brand integrations.</p>
 
-  <p class="partners-list">
-    Gieves & Hawkes<span>·</span>J. Press<span>·</span>N.Peal<span>·</span>Idle Assembly Rum<span>·</span>Stubbs & Wootton<span>·</span>Ghiaia Cashmere<span>·</span>August Special<span>·</span>J. Mueser<span>·</span>SIRPLUS<span>·</span>Thomas Riemer Gloves<span>·</span>Hornets Vintage Kensington<span>·</span>Aicus Shoes<span>·</span>Minted New York<span>·</span>Peshawar Jackets<span>·</span>Bumbazi
-  </p>
+  <div class="partners-by-pillar">
+    <div class="partners-pillar">
+      <p class="partners-pillar-name">The Standard</p>
+      <p class="partners-pillar-desc">Style, Clothing &amp; Craft</p>
+      <p class="partners-names">Henry Poole &amp; Co · Anderson &amp; Sheppard · Harvie &amp; Hudson · Gieves &amp; Hawkes · Private White V.C. · J. Press · Sirplus · Barbour · N. Peal · J. Mueser · Ghiaia Cashmere</p>
+    </div>
+    <div class="partners-pillar">
+      <p class="partners-pillar-name">The Dispatch</p>
+      <p class="partners-pillar-desc">Travel &amp; Hospitality</p>
+      <p class="partners-names">The Set Collection: Roundhill Hotel, Hotel Cafe Royal · The Royal Portfolio: The Silo Hotel, La Residence</p>
+    </div>
+    <div class="partners-pillar">
+      <p class="partners-pillar-name">The Pursuit</p>
+      <p class="partners-pillar-desc">Lifestyle &amp; Culture</p>
+      <p class="partners-names">Ineos Grenadier · Idle Assembly Rum</p>
+    </div>
+  </div>
 </section>
 
 <!-- CTA -->
@@ -987,9 +1109,11 @@
   <div class="cta-inner">
     <p class="cta-label">Get in touch</p>
     <h2 class="cta-title">Let's make<br>something that lasts.</h2>
-    <a class="cta-email" href="mailto:info@retroralph.uk">info@retroralph.uk</a>
+    <a class="cta-email" href="mailto:partnerships@retroralph.uk">partnerships@retroralph.uk</a>
     <div class="cta-links">
       <a class="cta-link" href="https://instagram.com/retro__ralph" target="_blank">Instagram</a>
+      <a class="cta-link" href="https://www.tiktok.com/@retroralph.uk" target="_blank">TikTok</a>
+      <a class="cta-link" href="https://www.facebook.com/retroralph.uk/" target="_blank">Facebook</a>
       <a class="cta-link" href="https://retroralph.substack.com" target="_blank">Substack</a>
     </div>
     <p class="footer-note">Retro Ralph Ltd &nbsp;·&nbsp; Company No. 13362975 &nbsp;·&nbsp; London, United Kingdom</p>

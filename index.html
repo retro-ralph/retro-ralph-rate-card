@@ -55,7 +55,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: 
+    background:
       repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,0.025) 79px, rgba(255,255,255,0.025) 80px),
       repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.025) 79px, rgba(255,255,255,0.025) 80px);
     pointer-events: none;
@@ -738,12 +738,113 @@
 
   .package-example-light:hover { border-bottom-color: var(--accent-light); }
 
+  /* ── EXAMPLES (What we make) ── */
+  .rate-examples {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    text-align: right;
+    padding-top: 4px;
+  }
+
+  .rate-examples-label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .rate-examples .package-example { margin-top: 0; white-space: nowrap; }
+
+  .rate-examples-none {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  /* ── PRICING ── */
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .price-cell {
+    background: var(--warm-white);
+    padding: 32px 28px;
+  }
+
+  .price-cell .rate-name { margin-bottom: 16px; }
+
+  .price-cell .package-price-label { margin-bottom: 6px; }
+
+  .price-note {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 20px 0 72px;
+  }
+
+  .sub-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .sub-block { margin-top: 72px; }
+
+  /* ── PRESS TRIPS ── */
+  .trip-host {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--ink);
+  }
+
+  .trip-gets {
+    font-size: 13px;
+    color: var(--ink-light);
+    text-align: right;
+    max-width: 320px;
+    line-height: 1.7;
+  }
+
+  .trip-gets strong { font-weight: 500; }
+
+  .trip-rules {
+    margin-top: 40px;
+    gap: 8px;
+  }
+
+  .trip-rules li { font-size: 13px; padding-left: 24px; }
+
+  .trip-row { align-items: end; }
+
+  .trip-examples {
+    margin-top: 32px;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+
+  .trip-examples .package-example { margin-top: 0; }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 640px) {
     section { padding: 60px 24px; }
     .stats-band, .cta-band { padding: 60px 24px; }
     .rate-item { grid-template-columns: 1fr; }
     .rate-price { text-align: left; }
+    .rate-examples { align-items: flex-start; text-align: left; }
+    .trip-gets { text-align: left; }
     .terms-grid { grid-template-columns: 1fr; }
     .audience-split { grid-template-columns: 1fr; }
     .partners-pillar { grid-template-columns: 1fr; }
@@ -920,87 +1021,88 @@
   </div>
 </div>
 
-<!-- RATES -->
+<!-- WHAT WE MAKE -->
 <section>
-  <p class="section-label">Rate Card</p>
+  <p class="section-label">What We Make</p>
   <h2 class="section-title">What we <em>make</em></h2>
-  <p class="section-intro">Every piece is built around the same filter: educate, entertain, or provoke emotion. Usually all three. Around 90% of content is unpaid — partnerships are selective, and brands are woven into the story rather than placed on top of it. That's why the audience trusts what they see.</p>
+  <p class="section-intro">Every piece is built around the same filter: educate, entertain, or provoke emotion. Usually all three. Around 90% of content is unpaid. Partnerships are selective, and brands are woven into the story rather than placed on top of it. That's why the audience trusts what they see.</p>
 
   <div class="rates-list">
     <div class="rate-item">
       <div>
         <p class="rate-name">Primary format</p>
         <h3 class="rate-title">Short-Form Video</h3>
-        <p class="rate-desc">Reels, TikTok, YouTube Shorts. Script, shoot, edit, and post included. A standard ~60s editorial reel sits at the lower end; a deeper narrative with extended production and broader usage moves toward the upper.</p>
-        <ul class="rate-bullets">
-          <li>One round of feedback built in as standard</li>
-          <li>Collaboration post (dual-tag) available on request</li>
-          <li>Discounts for series or multi-post commitments</li>
-        </ul>
+        <p class="rate-desc">Reels, TikTok, YouTube Shorts. Researched, scripted, shot, edited and posted by us. The format that finds new audiences.</p>
       </div>
-      <div class="rate-price">
-        <div class="rate-price-number">£2,000</div>
-        <div class="rate-price-sub">– £6,000 per video</div>
+      <div class="rate-examples">
+        <span class="rate-examples-label">Examples</span>
+        <a href="https://www.instagram.com/retro__ralph/reel/DKZ2pPGon9_/" target="_blank" class="package-example">Gieves &amp; Hawkes</a>
+        <a href="https://www.instagram.com/retro__ralph/reel/DPEdF6fCDkp/" target="_blank" class="package-example">J. Press</a>
+        <a href="https://www.instagram.com/retro__ralph/reel/Db6CZ47o9vu/" target="_blank" class="package-example">Gant</a>
+        <a href="https://www.instagram.com/retro__ralph/reel/Dd4Ob0TosHB/" target="_blank" class="package-example">Velasca</a>
+        <a href="https://www.instagram.com/retro__ralph/reel/DdkFQyXxKFD/" target="_blank" class="package-example">Private White V.C.</a>
+        <a href="https://www.instagram.com/retro__ralph/reel/DeXPngARVOL/" target="_blank" class="package-example">Anderson &amp; Sheppard</a>
       </div>
     </div>
 
     <div class="rate-item">
       <div>
-        <p class="rate-name">Supporting format</p>
-        <h3 class="rate-title">Carousels & Static Posts</h3>
-        <p class="rate-desc">Ideal for product highlights, event recaps, or evergreen educational content. Often used alongside video as part of a wider campaign.</p>
+        <p class="rate-name">Highest reach</p>
+        <h3 class="rate-title">Carousels</h3>
+        <p class="rate-desc">Up to 15 slides. Built to be saved, not scrolled past. Currently our highest-reach format.</p>
       </div>
-      <div class="rate-price">
-        <div class="rate-price-number">£500</div>
-        <div class="rate-price-sub">– £1,000 per post</div>
+      <div class="rate-examples">
+        <span class="rate-examples-label">Examples</span>
+        <a href="https://www.instagram.com/retro__ralph/p/DQMe7OaiG2f/" target="_blank" class="package-example">J. Press</a>
+        <a href="https://www.instagram.com/retro__ralph/p/DcJ8bNRkZI-/" target="_blank" class="package-example">Gant</a>
+        <a href="https://www.instagram.com/retro__ralph/p/DaH5wK0iANX/" target="_blank" class="package-example">Round Hill</a>
       </div>
     </div>
 
     <div class="rate-item">
       <div>
         <p class="rate-name">Long-form</p>
-        <h3 class="rate-title">Editorial (Substack / Blog)</h3>
-        <p class="rate-desc">Research-led, evergreen pieces. Built to be bookmarked, not scrolled past. Pricing reflects depth, originality, and long-term search value.</p>
+        <h3 class="rate-title">Editorial (Substack)</h3>
+        <p class="rate-desc">Research-led, evergreen pieces. The history, the detail, the reference that keeps being found. Built to be bookmarked.</p>
       </div>
-      <div class="rate-price">
-        <div class="rate-price-number">£800</div>
-        <div class="rate-price-sub">– £1,500 per article</div>
+      <div class="rate-examples">
+        <span class="rate-examples-label">Examples</span>
+        <!-- TODO: swap for a direct link to a partner article (e.g. Ghurka) -->
+        <a href="https://retroralph.substack.com" target="_blank" class="package-example">Read the Substack</a>
+      </div>
+    </div>
+
+    <div class="rate-item">
+      <div>
+        <p class="rate-name">Travel &amp; Events</p>
+        <h3 class="rate-title">Stories</h3>
+        <p class="rate-desc">A sequence across a launch, a visit or a stay. Always paired with a main piece. Average 10–15k views per story.</p>
+      </div>
+      <div class="rate-examples">
+        <span class="rate-examples-none">Included with every piece</span>
+      </div>
+    </div>
+
+    <div class="rate-item">
+      <div>
+        <p class="rate-name">Over time</p>
+        <h3 class="rate-title">Series</h3>
+        <p class="rate-desc">One brand, one thread, several pieces across a season or a year. Where the deepest storytelling happens.</p>
+      </div>
+      <div class="rate-examples">
+        <!-- TODO: link to a series piece (e.g. Private White V.C. Heroes reel) -->
+        <span class="rate-examples-none">On request</span>
       </div>
     </div>
 
     <div class="rate-item">
       <div>
         <p class="rate-name">Brand channel</p>
-        <h3 class="rate-title">Channel Takeover</h3>
-        <p class="rate-desc">Fully produced by Retro Ralph, posted exclusively on the partner's channel. Retro Ralph quality, your audience.</p>
+        <h3 class="rate-title">For Your Channel</h3>
+        <p class="rate-desc">Produced by Retro Ralph, posted on yours. Or we write and voice footage you already have. Retro Ralph quality, your audience.</p>
       </div>
-      <div class="rate-price">
-        <div class="rate-price-number">£1,000</div>
-        <div class="rate-price-sub">per video</div>
-      </div>
-    </div>
-
-    <div class="rate-item">
-      <div>
-        <p class="rate-name">Narration</p>
-        <h3 class="rate-title">Voiceover / Script Only</h3>
-        <p class="rate-desc">For brands producing their own footage internally. Retro Ralph writes and records the narration; you handle the edit.</p>
-      </div>
-      <div class="rate-price">
-        <div class="rate-price-number">£200</div>
-        <div class="rate-price-sub">per video</div>
-      </div>
-    </div>
-
-    <div class="rate-item">
-      <div>
-        <p class="rate-name">Travel & Events</p>
-        <h3 class="rate-title">Stories</h3>
-        <p class="rate-desc">Typically included as part of a wider package or trip collaboration. Average 10–15k views per story.</p>
-      </div>
-      <div class="rate-price">
-        <div class="rate-price-number" style="font-size: 22px;">On request</div>
-        <div class="rate-price-sub">usually bundled</div>
+      <div class="rate-examples">
+        <span class="rate-examples-none">On request</span>
       </div>
     </div>
   </div>
@@ -1008,17 +1110,43 @@
 
 <hr class="full-rule">
 
-<!-- PACKAGES -->
+<!-- PRICING -->
 <section>
-  <p class="section-label">Partnership Packages</p>
+  <p class="section-label">Pricing</p>
   <h2 class="section-title">Built to <em>last</em></h2>
-  <p class="section-intro">One-off posts are a starting point. The work that travels furthest is built across multiple pieces over time.</p>
+  <p class="section-intro">Starting prices, kept simple. Final pricing depends on scope and is confirmed in writing before work begins.</p>
 
+  <div class="price-grid">
+    <div class="price-cell">
+      <p class="rate-name">Short-form video</p>
+      <div class="package-price-label">From</div>
+      <div class="rate-price-number">£3,000</div>
+    </div>
+    <div class="price-cell">
+      <p class="rate-name">Carousel</p>
+      <div class="package-price-label">From</div>
+      <div class="rate-price-number">£2,000</div>
+    </div>
+    <div class="price-cell">
+      <p class="rate-name">Editorial</p>
+      <div class="package-price-label">From</div>
+      <div class="rate-price-number">£2,000</div>
+    </div>
+    <div class="price-cell">
+      <p class="rate-name">For your channel</p>
+      <div class="package-price-label">From</div>
+      <div class="rate-price-number">£1,000</div>
+      <div class="rate-price-sub">per video</div>
+    </div>
+  </div>
+  <p class="price-note">Stories come with any piece. They are not sold on their own.</p>
+
+  <p class="sub-label">Three ways to work</p>
   <div class="packages-grid">
     <div class="package">
       <p class="package-tag">01</p>
       <h3 class="package-name">The Introduction</h3>
-      <p class="package-includes">1 × reel<br><br>The starting point. A single, fully produced editorial reel — to establish the story and see how it lands.</p>
+      <p class="package-includes">1 × reel, carousel or article<br><br>The starting point. A single, fully produced piece — to establish the story and see how it lands.</p>
       <div class="package-price">
         <div class="package-price-label">From</div>
         £2,000
@@ -1032,7 +1160,7 @@
       <p class="package-includes">1 × reel + 1 × carousel + 1 × article + stories<br><br>The reel opens the door. The carousel gives it context. The article deepens it — with craft, history, and shoppable links. Stories amplify throughout. A complete editorial loop, not a single post.</p>
       <div class="package-price">
         <div class="package-price-label">From</div>
-        £3,500
+        £4,000
       </div>
       <a href="https://www.instagram.com/retro__ralph/reel/DPEdF6fCDkp/" target="_blank" class="package-example">View example</a>
     </div>
@@ -1048,6 +1176,113 @@
       <a href="https://www.instagram.com/retro__ralph/reel/DKZ2pPGon9_/" target="_blank" class="package-example package-example-light">View example</a>
     </div>
   </div>
+
+  <div class="sub-block">
+    <p class="sub-label">Guidelines</p>
+    <div class="terms-grid">
+      <div class="term">
+        <p class="term-title">What's Included</p>
+        <p class="term-body">Every price covers research, script, production, edit and posting across Instagram, TikTok and Facebook. Collaboration posts (dual-tag) on request.</p>
+      </div>
+      <div class="term">
+        <p class="term-title">Feedback</p>
+        <p class="term-body">One round of feedback as standard. Facts are checked with you. Opinions stay ours.</p>
+      </div>
+      <div class="term">
+        <p class="term-title">More Than One Piece</p>
+        <p class="term-body">Series and multi-piece partnerships are priced as a whole, not per item.</p>
+      </div>
+      <div class="term">
+        <p class="term-title">Payment</p>
+        <p class="term-body">Price confirmed in writing before work starts. Payment on delivery, within 30 days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="full-rule">
+
+<!-- PRESS TRIPS -->
+<section>
+  <p class="section-label">Hotels &amp; Destinations</p>
+  <h2 class="section-title">Places worth <em>going</em></h2>
+  <p class="section-intro">We cover places with a history worth telling: grand hotels, old country pubs, family estates, the bar where someone famous once sat. We visit, we find the story, we tell it properly.</p>
+
+  <div class="rates-list">
+    <div class="rate-item trip-row">
+      <div>
+        <p class="rate-name">You host</p>
+        <h3 class="trip-host">A meal or an experience</h3>
+      </div>
+      <p class="trip-gets">A Stories sequence, tagged</p>
+    </div>
+    <div class="rate-item trip-row">
+      <div>
+        <p class="rate-name">You host</p>
+        <h3 class="trip-host">A stay of two nights or more</h3>
+      </div>
+      <p class="trip-gets">A video or a carousel</p>
+    </div>
+    <div class="rate-item trip-row">
+      <div>
+        <p class="rate-name">You host</p>
+        <h3 class="trip-host">A stay with travel covered</h3>
+      </div>
+      <p class="trip-gets">A video and a carousel, <strong>plus a Substack article</strong></p>
+    </div>
+  </div>
+
+  <ul class="rate-bullets trip-rules">
+    <li>The angle is ours. We look for the history, the people and the detail that makes a place last.</li>
+    <li>Carousels and video are reserved for hosted stays and paid work.</li>
+    <li>Main pieces go live within six weeks of the visit. Stories run during it.</li>
+    <li>Midweek and shoulder season are welcome. We travel as two.</li>
+    <li>Where a full hosting isn't possible, a media rate works; the coverage scales with it.</li>
+    <li>Guaranteed dates, paid usage or extra pieces are priced as a paid partnership.</li>
+  </ul>
+
+  <div class="trip-examples">
+    <span class="rate-examples-label">Previously</span>
+    <a href="https://www.instagram.com/retro__ralph/reel/DT94gcyiLEE/" target="_blank" class="package-example">The Goring</a>
+    <a href="https://www.instagram.com/retro__ralph/p/DaH5wK0iANX/" target="_blank" class="package-example">Round Hill, Jamaica</a>
+    <a href="https://www.instagram.com/retro__ralph/reel/DVY1qwfCAV_/" target="_blank" class="package-example">The Silo Hotel</a>
+  </div>
+</section>
+
+<hr class="full-rule">
+
+<!-- ADVERTISING -->
+<section>
+  <p class="section-label">Advertising</p>
+  <h2 class="section-title">We don't make <em>ads</em></h2>
+  <p class="section-intro">We make editorial that a brand is part of. It's why people watch to the end. That said, good work deserves to travel. If you want to put spend behind something we made together, here is how it works.</p>
+
+  <div class="terms-grid">
+    <div class="term">
+      <p class="term-title">Partnership Ads</p>
+      <p class="term-body">Partnership ads and whitelisting run from @retro__ralph, on pieces we made with you. Not on content made elsewhere.</p>
+    </div>
+    <div class="term">
+      <p class="term-title">Licence</p>
+      <p class="term-body">90 days as standard. Longer on request.</p>
+    </div>
+    <div class="term">
+      <p class="term-title">Edits</p>
+      <p class="term-body">Cutdowns and new captions are fine. We sign them off before they run.</p>
+    </div>
+    <div class="term">
+      <p class="term-title">Fee</p>
+      <p class="term-body">A share of media spend, with a floor and a cap, settled in arrears. Or a flat licence fee. Agreed before launch.</p>
+    </div>
+    <div class="term">
+      <p class="term-title">Not On Offer</p>
+      <p class="term-body">Scripted reads, product-first ads, or our voice on someone else's footage for paid media.</p>
+    </div>
+    <div class="term">
+      <p class="term-title">Disclosure</p>
+      <p class="term-body">Paid and affiliate work is always labelled, in line with ASA guidelines and platform rules.</p>
+    </div>
+  </div>
 </section>
 
 <hr class="full-rule">
@@ -1060,7 +1295,7 @@
   <div class="terms-grid">
     <div class="term">
       <p class="term-title">Usage Rights</p>
-      <p class="term-body">Default usage is organic reposting with credit. Paid media amplification, whitelisting, or extended licensing is priced separately. Scope, duration, and geography confirmed before work begins.</p>
+      <p class="term-body">Default usage is organic reposting with credit. Paid amplification is covered under Advertising, above. Scope, duration, and geography confirmed before work begins.</p>
     </div>
     <div class="term">
       <p class="term-title">Exclusivity</p>
@@ -1089,12 +1324,12 @@
     <div class="partners-pillar">
       <p class="partners-pillar-name">The Standard</p>
       <p class="partners-pillar-desc">Style, Clothing &amp; Craft</p>
-      <p class="partners-names">Gieves &amp; Hawkes · Private White V.C. · J. Press · Sirplus · Barbour · Ghurka · N. Peal · J. Mueser · Ghiaia Cashmere</p>
+      <p class="partners-names">Gieves &amp; Hawkes · Private White V.C. · MR PORTER · J. Press · Gant · Velasca · Barbour · Ghurka · Harvie &amp; Hudson · N. Peal · Sirplus · J. Mueser · Ghiaia Cashmere · August Special · Stubbs &amp; Wootton · Saman Amel</p>
     </div>
     <div class="partners-pillar">
       <p class="partners-pillar-name">The Dispatch</p>
       <p class="partners-pillar-desc">Travel &amp; Hospitality</p>
-      <p class="partners-names">The Set Collection: Roundhill Hotel, Hotel Cafe Royal · The Royal Portfolio: The Silo Hotel, La Residence</p>
+      <p class="partners-names">The Set Collection: Round Hill, Hotel Café Royal · The Royal Portfolio: The Silo Hotel, La Residence · Bo House, Saint-Tropez · The Völkers House, Mallorca</p>
     </div>
     <div class="partners-pillar">
       <p class="partners-pillar-name">The Pursuit</p>
